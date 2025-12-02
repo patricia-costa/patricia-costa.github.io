@@ -10,62 +10,76 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Noto+Sans+Sinhala:wght@100..900&family=Anek+Tamil:wght@100..800&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="./common.css" />
     <link rel="stylesheet" href="./index.css" />
   </head>
-  <body class="page-content">
-    <div class="page-center">
-      <div class="header">
-        <div class="title">
-          <div class="upper-title inter bolder big">
-            MAPPING SRI LANKA PORTUGUESE AT PRESENT
+  <body class="page-content f-cabinet-grotesk">
+      <header class="header">
+        <div class="container">
+          <div class="title">
+            <div class="upper-title bolder big">Mapping Sri Lanka Portuguese</div>
+
+            <div class="nav">
+              <span class="nav-item bolder medium yellow-text"
+                ><a href="./index.html">Home</a></span
+              >
+              <span class="nav-item bolder medium yellow-text"
+                ><a href="./about/index.html">About</a></span
+              >
+              <span class="nav-item bolder medium yellow-text"
+                ><a href="./glossary/index.html">Glossary</a></span
+              >
+            </div>
           </div>
 
-          <div class="subtitle inter bold small">
-            தற்போது போர்த்துக்கீச பறங்கியர் மொழி மேப்பிங் දැනට පෘතුගීසි භාෂාව
-            කතා කරන භාෂා සිතියම්කරණය
+          <div class="title">
+            <div class="subtitle">
+              <span class="light small f-tamil">
+                போர்த்துக்கீச பறங்கியர் மொழி மேப்பிங்
+              </span>
+              <span class="light small f-sinhala">
+                පෘතුගීසි භාෂාව කතා කරන භාෂා සිතියම්කරණය
+              </span>
+            </div>
+          </div>
+        </div> <!-- container -->
+      </header>
+      <main class="map">
+        <div class="container">
+          <div class="button-container">
+            <div
+              class="button normal small unselected"
+              geojson-key="byDistrict"
+              data-key="byDistrict"
+            >
+              by district
+            </div>
+            <div
+              class="button normal small selected"
+              geojson-key="bySubDistrict"
+              data-key="bySubDistrict"
+            >
+              by grama niladhari
+            </div>
+          </div>
+          <div id="map-container"></div>
+          <div id="menu"></div>
+        </div> <!-- container -->
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-icons"></div>
+
+          <div class="copyright">
+            <p class="normal small">2025 Mapping Sri Lanka Portuguese</p>
           </div>
         </div>
-        <div class="nav">
-          <span class="nav-item inter bold medium yellow-text"
-            ><a href="./index.html">Home</a></span
-          >
-          <span class="nav-item inter bold medium yellow-text"
-            ><a href="./about/index.html">About</a></span
-          >
-          <span class="nav-item inter bold medium yellow-text"
-            ><a href="./glossary/index.html">Glossary</a></span
-          >
-        </div>
-      </div>
-      <div class="map">
-        <div class="button-container">
-          <div
-            class="button inter normal small unselected"
-            geojson-key="byDistrict"
-            data-key="byDistrict"
-          >
-            by district
-          </div>
-          <div
-            class="button inter normal small selected"
-            geojson-key="bySubDistrict"
-            data-key="bySubDistrict"
-          >
-            by grama niladhari
-          </div>
-        </div>
-        <div id="map-container"></div>
-        <div id="menu"></div>
-      </div>
-      <div class="footer">
-        <div class="footer-icons"></div>
-      </div>
-    </div>
+      </div> <!-- container -->
+    </footer>
     <script type="module" src="./index.js"></script>
   </body>
 </html>

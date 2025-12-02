@@ -1,3 +1,11 @@
 .padding-right {
-    padding-right: 100px;
+  padding-right: 100px;
+}
+
+.content .section .title {
+  margin-bottom: 25px;
+}
+
+.content .section:not(:first-child) {
+  margin-top: 70px;
 }
