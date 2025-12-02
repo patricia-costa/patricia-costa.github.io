@@ -18,67 +18,71 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body class="page-content f-cabinet-grotesk">
-      <header class="header">
-        <div class="container">
-          <div class="title">
-            <div class="upper-title bolder big">Mapping Sri Lanka Portuguese</div>
+    <header>
+      <div class="container">
+        <div class="title">
+          <div class="upper-title bolder big">Mapping Sri Lanka Portuguese</div>
 
-            <div class="nav">
-              <span class="nav-item bolder medium yellow-text"
-                ><a href="./index.html">Home</a></span
-              >
-              <span class="nav-item bolder medium yellow-text"
-                ><a href="./about/index.html">About</a></span
-              >
-              <span class="nav-item bolder medium yellow-text"
-                ><a href="./glossary/index.html">Glossary</a></span
-              >
-            </div>
-          </div>
-
-          <div class="title">
-            <div class="subtitle">
-              <span class="light small f-tamil">
-                போர்த்துக்கீச பறங்கியர் மொழி மேப்பிங்
-              </span>
-              <span class="light small f-sinhala">
-                පෘතුගීසි භාෂාව කතා කරන භාෂා සිතියම්කරණය
-              </span>
-            </div>
-          </div>
-        </div> <!-- container -->
-      </header>
-      <main class="map">
-        <div class="container">
-          <div class="button-container">
-            <div
-              class="button normal small unselected"
-              geojson-key="byDistrict"
-              data-key="byDistrict"
+          <div class="nav">
+            <span class="nav-item bolder medium yellow-text"
+              ><a href="./index.html">Home</a></span
             >
-              by district
-            </div>
-            <div
-              class="button normal small selected"
-              geojson-key="bySubDistrict"
-              data-key="bySubDistrict"
+            <span class="nav-item bolder medium yellow-text"
+              ><a href="./about/index.html">About</a></span
             >
-              by grama niladhari
-            </div>
-          </div>
-          <div id="map-container"></div>
-          <div id="menu"></div>
-        </div> <!-- container -->
-      </main>
-      <footer class="footer">
-        <div class="container">
-          <div class="footer-icons"></div>
-
-          <div class="copyright">
-            <p class="normal small">2025 Mapping Sri Lanka Portuguese</p>
+            <span class="nav-item bolder medium yellow-text"
+              ><a href="./glossary/index.html">Glossary</a></span
+            >
           </div>
         </div>
-      </div> <!-- container -->
+
+        <div class="title">
+          <div class="subtitle">
+            <span class="light small f-tamil">
+              போர்த்துக்கீச பறங்கியர் மொழி மேப்பிங்
+            </span>
+            <span class="light small f-sinhala">
+              පෘතුගීසි භාෂාව කතා කරන භාෂා සිතියම්කරණය
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- container -->
+    </header>
+
+    <main class="map">
+      <div class="container">
+        <div class="button-container">
+          <div
+            class="button normal small unselected"
+            geojson-key="byDistrict"
+            data-key="byDistrict"
+          >
+            by district
+          </div>
+          <div
+            class="button normal small selected"
+            geojson-key="bySubDistrict"
+            data-key="bySubDistrict"
+          >
+            by grama niladhari
+          </div>
+        </div>
+        <div id="map-container"></div>
+        <div id="menu"></div>
+      </div>
+      <!-- container -->
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-icons"></div>
+
+        <div class="copyright">
+          <p class="normal small">2025 Mapping Sri Lanka Portuguese</p>
+        </div>
+      </div>
+      <!-- container -->
     </footer>
     <script type="module" src="./index.js"></script>
   </body>
