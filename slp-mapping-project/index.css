@@ -1,0 +1,113 @@
+.map {
+  display: flex;
+  align-items: center;
+
+  /* font-family: "Source Sans 3", sans-serif; */
+  /* letter-spacing: 0.03em; */
+  flex-grow: 1;
+}
+#map-container {
+  width: 500px;
+  height: 650px;
+  /* background-color: lightblue; */
+}
+#menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#menu span:hover {
+  border: 1px solid black;
+}
+
+.map .button-container {
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 500px;
+}
+
+.map .button-container .button {
+  border-radius: 20px;
+  border: 1px solid #f2b02a;
+  width: 180px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.map .button-container .button.unselected {
+  background-color: #f2b02a;
+  color: black;
+  cursor: pointer;
+}
+
+.map .button-container .button.selected {
+  background-color: white;
+  color: #f2b02a;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 25px 0px;
+}
+
+.column:first-child > .cell {
+  padding-left: 25px;
+}
+.column:not(:first-child):not(:last-child) > .cell {
+  padding-left: 15px;
+}
+.column:nth-child(3) > .cell {
+  padding-right: 25px;
+}
+.column:not(:last-child):not(:nth-child(3)) > .cell {
+  padding-right: 15px;
+}
+
+.tooltip .table .cell:nth-child(odd) {
+  background: #f2f1f3;
+}
+.tooltip .table .cell:nth-child(even) {
+  /* no background color for other rows */
+}
+
+.column:first-child > .cell {
+  width: 90px;
+}
+.column:nth-child(2) > .cell {
+  width: 120px;
+}
+.column:nth-child(3) > .cell {
+  width: 70px;
+}
+
+.tooltip-header {
+  padding: 0px 25px;
+  padding-bottom: 25px;
+}
+.tooltip-header .sampled {
+  /* font-weight: 500;
+  font-size: 26px; */
+}
+.tooltip .table {
+  display: flex;
+}
+.tooltip .table .column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.tooltip .table .cell {
+  flex: 1;
+  white-space: nowrap;
+  line-height: 1.9;
+}
+
+.num {
+  text-align: right;
+}

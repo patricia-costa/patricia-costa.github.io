@@ -1,0 +1,168 @@
+/* font family */
+.f-inter {
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.03em;
+  font-style: normal;
+}
+
+.f-cabinet-grotesk {
+  font-family: "Cabinet Grotesk", sans-serif;
+  letter-spacing: 0.03em;
+  font-style: normal;
+}
+
+.f-tamil {
+  font-family: "Anek Tamil", sans-serif;
+  letter-spacing: 0.03em;
+  font-style: normal;
+}
+
+.f-sinhala {
+  font-family: "Noto Sans Sinhala", sans-serif;
+  letter-spacing: 0.03em;
+  font-style: normal;
+}
+
+/* font weight */
+.bolder {
+  font-weight: 800;
+}
+.bold {
+  font-weight: 700;
+}
+.boldish {
+  font-weight: 550;
+}
+.normal {
+  font-weight: 300;
+}
+.light {
+  font-weight: 100;
+}
+
+/* font size */
+.big {
+  font-size: 35px;
+}
+.medium {
+  font-size: 24px;
+}
+.medium-light {
+  font-size: 20px;
+}
+.small {
+  font-size: 17px;
+}
+
+.yellow-background {
+  background-color: #f2b02a;
+}
+.yellow-text {
+  color: #f2b02a;
+}
+
+p a {
+  color: #f2b02a;
+  text-decoration: underline;
+}
+
+.black-text {
+  color: black;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* background-color: lightblue; */
+}
+
+/* header */
+
+header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.title {
+  /* display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-between; */
+  display: flex;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.title * {
+  /* display: flex;
+  justify-content: space-between; */
+}
+.upper-title {
+  margin-right: auto;
+}
+
+.subtitle {
+  /* display: flex;
+  flex-direction: row; */
+}
+
+.subtitle span {
+  /* margin-right: 10px;
+  align-self: flex-end; */
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+}
+.nav .nav-item {
+  padding-left: 20px;
+  text-transform: uppercase;
+}
+
+.nav a {
+  color: #f2b02a;
+  text-decoration: none;
+}
+
+/* content */
+main {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+main .container {
+  max-width: 1000px;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  padding-top: 20px;
+  margin-top: auto;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .footer-icons {
+  background-image: url(./images/footer_images.svg);
+  width: 723px;
+  height: 40px;
+  display: inline-block;
+}
