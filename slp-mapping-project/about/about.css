@@ -9,3 +9,23 @@
 .content .section:not(:first-child) {
   margin-top: 70px;
 }
+
+.contributor img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.contributors {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.contributor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
