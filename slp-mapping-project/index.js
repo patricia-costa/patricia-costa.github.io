@@ -116,8 +116,18 @@ const renderMap = (
     const sampleData = d.data;
     if (!sampleData) {
       console.log("no sample data", d.properties.NAME_1, d.properties.NAME_2);
+      tooltip
+        .transition()
+        .duration(200)
+        .style("opacity", 0)
+        .on("end", () => {
+          console.log("animation ended, tooltip opacity 0");
+          tooltip.style("z-index", "-1");
+        });
       return;
     }
+
+    path.on("mouseout", mouseover);
 
     console.log("hover render map", {
       properties: d.properties,
@@ -165,15 +175,6 @@ const renderMap = (
       selectedDistrictInfoObj.district = null;
       selectedDistrictInfoObj.subDistrict = null;
 
-      tooltip
-        .transition()
-        .duration(200)
-        .style("opacity", 0)
-        .on("end", () => {
-          console.log("animation ended, tooltip opacity 0");
-          tooltip.style("z-index", "-1");
-        });
-
       d3.select(this)
         .attr("stroke-width", "1px")
         .attr("stroke", unselectedRegionBorderColor)
@@ -208,11 +209,13 @@ const renderMap = (
 };
 
 const renderTooltipHTML = (districtName, subDistrictName, data) => {
-  const subDistrictHTML = !subDistrictName ? "" : `, ${subDistrictName}`;
-  const titleHTML = `<span>${districtName}${subDistrictHTML}</span>`;
+  const subDistrictText = !subDistrictName ? "" : `, ${subDistrictName}`;
   const total = Object.values(data).reduce((accum, value) => accum + value, 0);
-  const totalHTML = `<div class="sampled"><span>${total} sampled</span></div>`;
-  const headerHTML = `<div class="tooltip-header">${titleHTML}${totalHTML}</div>`;
+  const headerHTML = `
+    <div class="tooltip-header">
+      <span class="bolder medium-light">${districtName}${subDistrictText}</span>
+      <div class="sampled"><span class="normal small">${total} sampled</span></div>
+    </div>`;
 
   const dataKeys = ["Falantes", "Semi-falantes", "Não-falantes", "NA"];
   const translate = (ptText) => {
@@ -228,7 +231,7 @@ const renderTooltipHTML = (districtName, subDistrictName, data) => {
   // organize the table by columns to make the columns evenly spaced
   const tableHTML = `
         <div class="table">
-            <div class="column table-header">
+            <div class="column table-header boldish medium-light">
                 ${dataKeys
                   .map(
                     (dataKey) => `<div class="cell">${translate(dataKey)}</div>`
@@ -237,7 +240,7 @@ const renderTooltipHTML = (districtName, subDistrictName, data) => {
 
             </div>
 
-            <div class="column">
+            <div class="column light small">
                 ${dataKeys
                   .map(
                     (dataKey) =>
@@ -246,7 +249,7 @@ const renderTooltipHTML = (districtName, subDistrictName, data) => {
                   .join("\n")}
             </div>
 
-            <div class="column">
+            <div class="column light small">
                 ${dataKeys
                   .map(
                     (dataKey) =>
@@ -256,6 +259,12 @@ const renderTooltipHTML = (districtName, subDistrictName, data) => {
                           : 0
                       }%</div>`
                   )
+                  .join("\n")}
+            </div>
+
+            <div class="column light small">
+                ${dataKeys
+                  .map((dataKey) => `<div class="cell num empty"></div>`)
                   .join("\n")}
             </div>
         </div>`;

@@ -30,6 +30,9 @@
 .bold {
   font-weight: 700;
 }
+.boldish {
+  font-weight: 550;
+}
 .normal {
   font-weight: 300;
 }

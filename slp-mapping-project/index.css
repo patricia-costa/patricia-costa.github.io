@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
 
-  font-family: "Source Sans 3", sans-serif;
-  letter-spacing: 0.03em;
+  /* font-family: "Source Sans 3", sans-serif; */
+  /* letter-spacing: 0.03em; */
   flex-grow: 1;
 }
 #map-container {
@@ -51,56 +51,63 @@
 .tooltip {
   position: absolute;
   background-color: white;
-  padding: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 25px 0px;
 }
 
-.tooltip .header {
-  font-weight: 700;
-  font-size: 32px;
-  padding: 30px;
+.column:first-child > .cell {
+  padding-left: 25px;
 }
-.tooltip .sampled {
-  font-weight: 500;
-  font-size: 26px;
+.column:not(:first-child):not(:last-child) > .cell {
+  padding-left: 15px;
 }
-.tooltip .table {
-  display: flex;
-  padding: 30px;
+.column:nth-child(3) > .cell {
+  padding-right: 25px;
 }
-.tooltip .table .column {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding-top: 15px;
-  padding-bottom: 15px;
+.column:not(:last-child):not(:nth-child(3)) > .cell {
+  padding-right: 15px;
 }
+
 .tooltip .table .cell:nth-child(odd) {
   background: #f2f1f3;
 }
 .tooltip .table .cell:nth-child(even) {
   /* no background color for other rows */
 }
-.tooltip .table .cell:first-child {
-  border-top: 1px solid #dfe2e6;
+
+.column:first-child > .cell {
+  width: 90px;
+}
+.column:nth-child(2) > .cell {
+  width: 120px;
+}
+.column:nth-child(3) > .cell {
+  width: 70px;
+}
+
+.tooltip-header {
+  padding: 0px 25px;
+  padding-bottom: 25px;
+}
+.tooltip-header .sampled {
+  /* font-weight: 500;
+  font-size: 26px; */
+}
+.tooltip .table {
+  display: flex;
+}
+.tooltip .table .column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 .tooltip .table .cell {
   flex: 1;
   white-space: nowrap;
-  padding-right: 15px;
-  padding-left: 15px;
+  line-height: 1.9;
+}
 
-  border-bottom: 1px solid #dfe2e6;
-}
-.tooltip .table .table-header {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 32px;
-}
 .num {
   text-align: right;
-}
-.tooltip .table .num {
-  font-weight: 500;
-  font-size: 32px;
 }
