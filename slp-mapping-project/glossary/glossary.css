@@ -1,3 +1,9 @@
+.title {
+  display: flex;
+  align-items: start;
+  flex-direction: row;
+}
+
 .section {
   display: flex;
   flex-direction: row;

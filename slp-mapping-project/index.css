@@ -7,8 +7,8 @@
   flex-grow: 1;
 }
 #map-container {
-  width: 500px;
-  height: 650px;
+  width: 430px;
+  height: 735px;
   /* background-color: lightblue; */
 }
 #menu {
@@ -21,11 +21,11 @@
 }
 
 .map .button-container {
-  padding-bottom: 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 500px;
+  width: 430px;
+  margin-bottom: 80px;
 }
 
 .map .button-container .button {
@@ -38,14 +38,14 @@
 }
 
 .map .button-container .button.unselected {
-  background-color: #f2b02a;
-  color: black;
+  background-color: white;
+  color: #f2b02a;
   cursor: pointer;
 }
 
 .map .button-container .button.selected {
-  background-color: white;
-  color: #f2b02a;
+  background-color: #f2b02a;
+  color: black;
 }
 
 .tooltip {
@@ -105,7 +105,8 @@
 .tooltip .table .cell {
   flex: 1;
   white-space: nowrap;
-  line-height: 1.9;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .num {

@@ -7,21 +7,15 @@ const dataStyle = (dataStyleF, noDataStyle) => (feature) =>
       : dataStyleF
     : noDataStyle;
 
-const selectedStyleF =
-  (selectedDistrictInfo) => (selected, notSelected) => (feature) =>
-    selectedDistrictInfo &&
-    feature.properties.NAME_1 === selectedDistrictInfo.district &&
-    (!selectedDistrictInfo.subDistrict ||
-      feature.properties.NAME_2 === selectedDistrictInfo.subDistrict)
-      ? selected
-      : notSelected;
-
 const updateMap = (() => {
+  const mapContainerElement = document.querySelector("#map-container");
+  const mapContainerWidth = mapContainerElement.clientWidth;
+  const mapContainerHeight = mapContainerElement.clientHeight;
   const svgNode = d3
-    .select("#map-container")
+    .select(mapContainerElement)
     .append("svg")
-    .attr("width", 500)
-    .attr("height", 650);
+    .attr("width", mapContainerWidth)
+    .attr("height", mapContainerHeight);
 
   const tooltip = d3
     .select("body")
@@ -29,7 +23,7 @@ const updateMap = (() => {
     .attr("class", "tooltip")
     .style("opacity", 0);
 
-  const projection = d3.geoMercator().scale(8000).center([82.5, 8.5]);
+  const projection = d3.geoMercator().scale(10500).center([82.2, 8.525]);
 
   const GLOBAL_SELECTED_DISTRICT_INFO = {
     district: null,
@@ -372,27 +366,6 @@ const getActiveGeojson = () => {
   );
   return ACTIVE_KEY_GEOJSON && GLOBAL_GEOJSON[ACTIVE_KEY_GEOJSON];
 };
-
-const setupView = (geojson) => {
-  const svgNode = d3
-    .select("#map-container")
-    .append("svg")
-    .attr("width", 500)
-    .attr("height", 650);
-
-  const tooltip = d3
-    .select("body")
-    .append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
-
-  const projection = d3.geoMercator().scale(8000).center([82.5, 8.5]);
-
-  renderMap(svgNode, geojson, projection, tooltip, getActiveData);
-  // renderTestMenu(geojson, updateMap(svgNode, geojson, projection, tooltip));)
-};
-
-// https://brendansudol.github.io/writing/responsive-d3
 
 const main = async () => {
   const MAP_ELEMENT_ID = "#map";

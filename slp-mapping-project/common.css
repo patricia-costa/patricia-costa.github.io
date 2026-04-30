@@ -1,7 +1,32 @@
 /* font family */
-.f-inter {
-  font-family: "Inter", sans-serif;
-  letter-spacing: 0.03em;
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("./fonts/CabinetGrotesk/CabinetGrotesk-Variable.woff2")
+      format("woff2"),
+    url("./fonts/CabinetGrotesk/CabinetGrotesk-Variable.woff") format("woff"),
+    url("./fonts/CabinetGrotesk/CabinetGrotesk-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Tamil";
+  src: url("./fonts/Noto_Sans_Tamil/NotoSansTamil-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-stretch: 62.5% 100%;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Sinhala";
+  src: url("./fonts/Noto_Sans_Sinhala/NotoSansSinhala-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-stretch: 62.5% 100%;
+  font-display: swap;
   font-style: normal;
 }
 
@@ -12,15 +37,19 @@
 }
 
 .f-tamil {
-  font-family: "Anek Tamil", sans-serif;
+  font-family: "Noto Sans Tamil", sans-serif;
   letter-spacing: 0.03em;
   font-style: normal;
+
+  font-size: 17px;
 }
 
 .f-sinhala {
   font-family: "Noto Sans Sinhala", sans-serif;
   letter-spacing: 0.03em;
   font-style: normal;
+
+  font-size: 17px;
 }
 
 /* font weight */
@@ -50,8 +79,12 @@
 .medium-light {
   font-size: 20px;
 }
+.medium-text {
+  font-size: 18px;
+}
+
 .small {
-  font-size: 17px;
+  font-size: 12px;
 }
 
 .yellow-background {
@@ -87,8 +120,10 @@ body {
 /* header */
 
 header {
+  margin-bottom: 100px;
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color: #f5f5f5;
 }
 
 .title {
@@ -98,7 +133,6 @@ header {
   justify-content: space-between; */
   display: flex;
   align-items: center;
-  display: flex;
   flex-direction: row;
 }
 
@@ -135,15 +169,27 @@ header {
   text-decoration: none;
 }
 
+.nav a.selected {
+  color: #545454;
+}
+.nav a:hover {
+  color: #545454;
+}
+
 /* content */
 main {
   display: flex;
   flex-grow: 1;
   align-items: center;
+  margin-bottom: 100px;
 }
 
 main .container {
   max-width: 1000px;
+}
+
+.footer-margin {
+  margin-top: 100px;
 }
 
 /* footer */
@@ -151,6 +197,7 @@ footer {
   width: 100%;
   padding-top: 20px;
   margin-top: auto;
+  background-color: #f5f5f5;
 }
 
 footer .container {
